@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="Style.css">
+</body>
+</html>
+ 
+<!-- Sticky Navbar -->
+  <div class="navbar">
+    <div class="brand">Pro UI — Animations</div>
+    <div class="navlinks">
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Section: Grid Layout (Task 1) -->
+    <h1 class="section-title">1) Grid Layout — 3 columns (desktop) → 1 column (mobile)</h1>
+    <div class="grid-demo">
+      <div class="card">
+        <h3>Card One</h3>
+        <p>Responsive card content. On wide screens there are 3 columns. Shrink screen to see 1 column layout.</p>
+      </div>
+      <div class="card">
+        <h3>Card Two</h3>
+        <p>Grid uses CSS Grid with a simple media query for mobile.</p>
+      </div>
+      <div class="card">
+        <h3>Card Three</h3>
+        <p>Cards have equal width and consistent spacing and shadow.</p>
+      </div>
+    </div>
+
+    <!-- Section: Bouncing Ball (Task 2) -->
+    <h1 class="section-title">2) Bouncing Ball Animation (keyframes)</h1>
+    <div class="bounce-wrap">
+      <div class="ball-stage" aria-hidden="true">
+        <div class="ball" title="bouncing ball"></div>
+        </div>
+
+      <div class="ball-stage" aria-hidden="true">
+        <div class="ball variant" title="bouncing ball variant"></div>
+      </div>
+
+      <div class="muted">Animation: <strong>bounce</strong> keyframes with multiple ease steps.</div>
+    </div>
+
+    <!-- Section: Modal Popup (Task 4) — pure CSS -->
+    <h1 class="section-title">3) Modal Popup — Pure CSS (no JS)</h1>
+
+    <!-- checkbox toggle -->
+    <input id="modal-toggle" type="checkbox" />
+    <!-- visible opener (label toggles checkbox) -->
+    <label for="modal-toggle" class="modal-opener">Open Modal (CSS Only)</label>
+
+    <!-- overlay + modal -->
+    <div class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-box">
+        <h2>Modal Title</h2>
+        <p>This popup is controlled with a hidden checkbox. Click close or outside to hide.</p>
+        <!-- label to uncheck checkbox -->
+        <label for="modal-toggle" class="close-button">Close</label>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Section: Tooltip (Task 5) -->
+    <h1 class="section-title">4) Tooltip — Show text on hover (pseudo-elements)</h1>
+    <div class="demo-row">
+      <div class="tooltip" data-tip="This is a helpful tooltip">Hover me</div>
+      <div class="tooltip" data-tip="Another tip: press here">Hover this too</div>
+      <div class="muted">Tooltips are created using <code>::after</code> and <code>::before</code> pseudo-elements.</div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Small note -->
+    <p class="muted">Everything above is pure HTML & CSS. No JavaScript is required except when you want more interaction or accessbility helpers (e.g., focus trapping for modal).</p>
+
+  </div>
+</body>
+</html>

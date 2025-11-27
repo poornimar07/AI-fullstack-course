@@ -1,0 +1,191 @@
+ 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #1976d2;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .task {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      flex: 1 1 300px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .task h3 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .box {
+      padding: 12px 15px;
+      margin: 5px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+    }
+
+    /* ========== Task 1 Responsive Header ========== */
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-flex .logo { background: #4caf50; }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links .box { background: #ff9800; }
+
+    /* ========== Task 2 Pricing Table ========== */
+    .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .plan {
+      flex: 1;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .plan h4 { margin: 0; }
+    .plan p { margin: 10px 0; }
+    .plan button {
+      background: #1976d2;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .plan.basic { background: #e1f5fe; }
+    .plan.pro { background: #b3e5fc; }
+    .plan.premium { background: #81d4fa; }
+
+    /* ========== Task 3 Gallery ========== */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .gallery .box:nth-child(1) { background: #f44336; }
+    .gallery .box:nth-child(2) { background: #4caf50; }
+    .gallery .box:nth-child(3) { background: #2196f3; }
+    .gallery .box:nth-child(4) { background: #ffeb3b; color: #333; }
+    .gallery .box:nth-child(5) { background: #9c27b0; }
+    .gallery .box:nth-child(6) { background: #ff9800; }
+
+    /* ========== Task 4 Full Center ========== */
+    .full-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 120px;
+    }
+    .full-center .box { background: #795548; }
+
+    /* ========== Task 5 Flex-grow ========== */
+    .flex-grow {
+      display: flex;
+    }
+    .flex-grow .box { flex: 1; }
+    .flex-grow .box:nth-child(1) { background: #e91e63; }
+    .flex-grow .box:nth-child(2) { background: #009688; }
+    .flex-grow .box:nth-child(3) { background: #3f51b5; }
+
+    /* ========== Task 6 Chat ========== */
+    .chat {
+      display: flex;
+      justify-content: space-between;
+    }
+    .chat .box:nth-child(1) { background: #607d8b; }
+    .chat .box:nth-child(2) { background: #8bc34a; }
+
+    /* ========== Task 7 Sticky Header ========== */
+    .sticky {
+      position: sticky;
+      top: 0;
+      background: #ff5722;
+      padding: 8px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    /* ========== Task 8 Hero Section ========== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero .box:nth-child(1) { background: #673ab7; width: 80%; }
+    .hero .box:nth-child(2) { background: #00bcd4; width: 60%; }
+
+    /* ========== Task 9 Inline Form ========== */
+    .inline-form {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .inline-form label {
+      padding: 8px;
+      background: #eee;
+      border-radius: 6px;
+    }
+    .inline-form input {
+      padding: 8px;
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .inline-form button {
+      padding: 8px 12px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  
+    /* Responsive Columns */
+.responsive-columns {
+  display: flex;
+  gap: 10px;
+}
+
+.responsive-columns .box:nth-child(1) { background: #f44336; }
+.responsive-columns .box:nth-child(2) { background: #4caf50; }
+.responsive-columns .box:nth-child(3) { background: #2196f3; }
+
+/* Mobile: 1 column */
+@media (max-width: 768px) {
+  .responsive-columns {
+    flex-direction: column;
+  }
+}

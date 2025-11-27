@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./Style.css">
+
+</head>
+<body>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Topics Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f4f6fb;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #673ab7, #3f51b5);
+      padding: 15px 25px;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .navbar ul li a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .auto-right {
+      margin-left: auto;
+      background: #ff9800;
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+    .auto-right:hover {
+      background: #e68900;
+    }
+
+    /* Section Headings */
+    h1, h2, h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    h1 {
+      font-size: 30px;
+      text-align: center;
+      margin: 30px 0 20px;
+      color: #3f51b5;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 25px 0 15px;
+      color: #673ab7;
+      border-left: 5px solid #673ab7;
+      padding-left: 10px;
+    }
+    h3 {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    /* Container (Sidebar + Content) */
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap; /* wrap example */
+      background: #fafafa;
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 220px;
+      background: #ffeb3b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .content {
+      flex: 3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; /* gap example */
+    }
+
+    /* Cards */
+    .card {
+      flex: 1 1 calc(33% - 20px); /* equal columns */
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      min-width: 240px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+
+    /* Column Reverse */
+    .reverse {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 10px;
+      background: #e1f5fe;
+      padding: 15px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+    }
+    .reverse div {
+      background: #03a9f4;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      background: #3f51b5;
+      color: white;
+      padding: 18px;
+      margin-top: 30px;
+      font-size: 14px;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-wrap: wrap;
+      }
+      .card {
+        flex: 1 1 100%;
+      }
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">MyLogo</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#" class="auto-right">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <h1>Website Layout – All Topics Example</h1>
+
+  <!-- Sidebar + Content -->
+  <section class="container">
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>📌 Dashboard</p>
+      <p>📌 Profile</p>
+      <p>📌 Settings</p>
+    </aside>
+
+    <main class="content">
+      <h2>Cards (Equal Columns + Gap)</h2>
+      <div class="card"><h3>Card 1</h3><p>Card with description.</p></div>
+      <div class="card"><h3>Card 2</h3><p>Card with description.</p></div>
+      <div class="card"><h3>Card 3</h3><p>Card with description.</p></div>
+      <div class="card"><h3>Card 4</h3><p>Card with description.</p></div>
+      <div class="card"><h3>Card 5</h3><p>Card with description.</p></div>
+      <div class="card"><h3>Card 6</h3><p>Card with description.</p></div>
+    </main>
+  </section>
+
+  <!-- Column Reverse -->
+  <section>
+    <h2>Column Reverse Example</h2>
+    <div class="reverse">
+      <div>Item A</div>
+      <div>Item B</div>
+      <div>Item C</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h2>Footer</h2>
+    <p>© 2025 My Website | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
+

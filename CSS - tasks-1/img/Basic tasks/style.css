@@ -1,0 +1,174 @@
+/* ===================================
+   CSS TASK ROADMAP - BASIC LEVEL
+   All 10 Tasks Demonstrated
+   =================================== */
+
+/* TASK 1: Background Color */
+/* Make the whole page light blue */
+body {
+    background-color: lightblue;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* TASK 2: Heading Style */
+/* Change h1 font, size, and color */
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 48px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 28px;
+    color: #34495e;
+    margin-top: 30px;
+}
+
+/* TASK 3: Paragraph Alignment */
+/* Center a paragraph using text-align */
+.centered {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+/* TASK 4: Button Shape */
+/* Create a button with padding and rounded corners */
+.styled-button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* TASK 5: Hover Effect */
+/* Make button text change color on hover */
+.hover-button {
+    padding: 15px 30px;
+    border-radius: 8px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.hover-button:hover {
+    color: #f1c40f;
+    background-color: #c0392b;
+}
+
+/* TASK 6: Font Sizes (Text Hierarchy) */
+/* Make h1 bigger than p */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+/* h1 is already 48px (see Task 2), p is 16px - hierarchy achieved! */
+
+/* TASK 7: Box Shadow */
+/* Add a soft shadow to a box */
+.shadow-box {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+/* TASK 8: List Styling */
+/* Change bullet points to circles */
+.circle-list {
+    list-style-type: circle;
+    font-size: 16px;
+    color: #333;
+    line-height: 2;
+    padding-left: 40px;
+}
+
+.circle-list li {
+    margin: 10px 0;
+}
+
+/* TASK 9: Image Border */
+/* Add a thick border to an image */
+.bordered-image {
+    border: 8px solid #2c3e50;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* TASK 10: Link Color */
+/* Change visited link color */
+.styled-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.styled-link:visited {
+    color: #9b59b6;
+}
+
+.styled-link:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* ===================================
+   ADDITIONAL STYLING FOR LAYOUT
+   =================================== */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.task {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.task:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+}

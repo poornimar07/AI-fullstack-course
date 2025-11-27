@@ -1,0 +1,89 @@
+h2{
+    color: red;
+}
+
+h3{
+    color: green;
+}
+
+h1{
+    color: tomato;
+}
+
+.heading-one{
+    color: blue;
+} 
+
+#heading-id{
+    color: violet;
+}
+
+h4{
+    /* color: blue; */
+    /* color: #4328DD; */
+    color: rgba(67, 40, 221,1);
+}
+
+
+.box{
+    border: 5px solid green;
+    /* padding: 50px;
+    margin: 50px; */
+    /* padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 150px;
+    padding-left: 200px; */
+
+    /* Two Params 1 => TOP AND BOTTOM 2 => LEFT AND RIGHT*/
+
+    /* padding: 100px 200px; */
+
+    /* Four Params 1=> TOP 2=> RIGHT 3=> BOTTOM 4=> LEFT*/
+    padding: 50px 100px 150px 200px;
+
+    /* margin: 100px 200px; */
+    margin: 50px 100px 150px 200px;
+}
+
+.box-1{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+    padding: 50px;
+}
+
+
+.box-2{
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    color: white;
+    font-size: 25px;
+    box-sizing: border-box;
+    padding: 50px;
+    border: 5px solid green;
+}
+
+.parent{
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    /* position: static; */
+    /* position: relative; */
+    top: 100px;
+    left: 100px;
+}
+
+.child{
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+    /* position: absolute; */
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
