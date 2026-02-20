@@ -1,0 +1,83 @@
+body {
+    font-family:system-ui, Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f3f4f6;
+}
+
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    width: 360px;
+    text-align: center;
+}
+
+
+.score {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 8px 0;
+
+}
+
+.play-area {
+    height: 220px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0;
+    background: linear-gradient(#fff, #fafafa);
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.message {
+    color: #555;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+
+button {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+
+button.primary {
+    background: #0b79f7;
+    color: white;
+    border-color: transparent;
+}
+
+.target {
+    width: 40px;
+    height: 40px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    user-select: none;
+}

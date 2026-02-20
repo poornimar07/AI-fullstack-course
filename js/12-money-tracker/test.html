@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theme Switcher — Vanilla CSS + JS</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0f1724;
+      --card: #ffffff;
+      --muted: #64748b;
+      --accent: #2563eb; /* default */
+      --transition: 220ms ease;
+    }
+    .dark{
+      --bg: #0f1724;
+      --fg: #f8fafc;
+      --card: #0b1220;
+      --muted: #94a3b8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:var(--bg);
+      color:var(--fg);
+      transition: background var(--transition), color var(--transition);
+      min-height:100vh;
+      padding:28px;
+    }
+    .container{max-width:900px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between}
+    h1{font-size:20px;margin:0}
+
+    /* Toggle */
+    .toggle{
+      width:54px;height:30px;border-radius:999px;background:#e6e9ee;display:inline-flex;align-items:center;padding:3px;cursor:pointer;position:relative;transition:background var(--transition);
+    }
+    .toggle.dark{background:#1f2937}
+    .knob{width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(2,6,23,0.12);transition:transform var(--transition)}
+    .knob.move{transform:translateX(24px)}
+
+    /* Accent picker */
+    select{padding:6px 8px;border-radius:6px;border:1px solid #e6e9ee;background:transparent;color:var(--fg)}
+
+    main{margin-top:22px;display:grid;grid-template-columns:1fr;gap:16px}
+    .card{padding:16px;border-radius:10px;background:var(--card);box-shadow:0 1px 0 rgba(2,6,23,0.04);border:1px solid rgba(2,6,23,0.04);transition:background var(--transition), color var(--transition), border-color var(--transition)}
+    .muted{color:var(--muted);font-size:14px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;border:none;cursor:pointer}
+
+    footer{font-size:13px;color:var(--muted)}
+
+    /* responsive */
+    @media(min-width:640px){
+      main{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Theme Switcher</h1>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div id="themeToggle" class="toggle" role="button" tabindex="0" aria-label="Toggle theme">
+          <div id="knob" class="knob"></div>
+        </div>
+        <label for="accent" class="sr-only">Accent</label>
+        <select id="accent" aria-label="Select accent">
+          <option value="#2563eb">Blue</option>
+          <option value="#ef4444">Rose</option>
+          <option value="#10b981">Emerald</option>
+          <option value="#f59e0b">Amber</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2 style="margin:0 0 8px 0">Your current theme</h2>
+        <p id="currentTheme" class="muted">Loading…</p>
+      </section>
+
+      <section class="card">
+        <h3 style="margin:0 0 8px 0">Preview</h3>
+        <p class="muted">This is a sample card to preview colors.</p>
+        <div style="margin-top:12px">
+          <button id="sampleBtn" class="btn">Primary</button>
+        </div>
+      </section>
+
+      <section class="card" style="grid-column:1 / -1">
+        <p class="muted">Theme preference is saved to <code>localStorage</code>. By default the page follows your system color scheme.</p>
+      </section>
+    </main>
+
+    <footer style="margin-top:18px">Tip: press space or enter while the toggle is focused to switch themes.</footer>
+  </div>
+
+  <script>
+    const THEME_KEY = 'stoz_theme';
+    const ACCENT_KEY = 'stoz_accent';
+
+    const themeToggle = document.getElementById('themeToggle');
+    const knob = document.getElementById('knob');
+    const currentTheme = document.getElementById('currentTheme');
+    const accentSelect = document.getElementById('accent');
+    const sampleBtn = document.getElementById('sampleBtn');
+
+    function isSystemDark(){
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function applyTheme(theme){
+      const body = document.body;
+      if(theme === 'dark'){
+        body.classList.add('dark');
+        themeToggle.classList.add('dark');
+        knob.classList.add('move');
+      } else {
+        body.classList.remove('dark');
+        themeToggle.classList.remove('dark');
+        knob.classList.remove('move');
+      }
+      currentTheme.textContent = `Theme: ${theme}`;
+    }
+
+    function saveTheme(theme){ localStorage.setItem(THEME_KEY, theme); }
+    function saveAccent(accent){ localStorage.setItem(ACCENT_KEY, accent); }
+
+    function applyAccent(color){
+      document.documentElement.style.setProperty('--accent', color);
+      sampleBtn.style.background = color;
+    }
+
+    // init
+    (function(){
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      const savedAccent = localStorage.getItem(ACCENT_KEY) || '#2563eb';
+
+      const initial = savedTheme || (isSystemDark() ? 'dark' : 'light');
+      applyTheme(initial);
+      applyAccent(savedAccent);
+
+      // set select to saved accent
+      // find option matching savedAccent, otherwise add it
+      let found=false;
+      for(const opt of accentSelect.options){ if(opt.value === savedAccent){ opt.selected=true; found=true; break; } }
+      if(!found){ const extra = document.createElement('option'); extra.value = savedAccent; extra.text = 'Custom'; extra.selected=true; accentSelect.appendChild(extra); }
+
+      // listen to system preference changes only if user hasn't saved a theme
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e=>{
+        if(!localStorage.getItem(THEME_KEY)){
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+    })();
+
+    themeToggle.addEventListener('click', ()=>{
+      const isDark = document.body.classList.contains('dark');
+      const next = isDark ? 'light' : 'dark';
+      applyTheme(next);
+      saveTheme(next);
+    });
+
+    themeToggle.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); themeToggle.click(); }
+    });
+
+    accentSelect.addEventListener('change', (e)=>{
+      const color = e.target.value;
+      applyAccent(color);
+      saveAccent(color);
+    });
+
+  </script>
+</body>
+</html>
