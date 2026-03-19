@@ -154,9 +154,7 @@
           font-size:16px;
         transition:background 0.3s;
 
-
-
-
+        }
 
         .clear-compeleted:hover {
             background: #ff5252;
@@ -169,4 +167,4 @@
             font-size: 18px;
         }
 
-        }
+        
