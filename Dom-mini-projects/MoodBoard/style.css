@@ -1,0 +1,58 @@
+
+ body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: #fff9c4;
+  transition: background 0.5s;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+#moodDisplay {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#moodEmoji {
+  font-size: 64px;
+  margin: 0;
+}
+
+#moodText {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+button {
+  padding: 14px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
