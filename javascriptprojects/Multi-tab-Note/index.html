@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Notes Tabs</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+  <!-- main box -->
+  <div class="container">
+
+    <!-- title -->
+    <h1>📝 My Notes</h1>
+
+    <!-- these are the tab buttons -->
+    <div class="tabs">
+      <button onclick="openTab('tab1')" id="btn-tab1" class="tab-btn active">Tab 1</button>
+      <button onclick="openTab('tab2')" id="btn-tab2" class="tab-btn">Tab 2</button>
+      <button onclick="openTab('tab3')" id="btn-tab3" class="tab-btn">Tab 3</button>
+    </div>
+
+    <!-- tab 1 content -->
+    <div id="tab1" class="tab-content">
+      <textarea id="note-tab1" placeholder="Write your notes here..."></textarea>
+      <button onclick="saveNote('tab1')" class="save-btn">💾 Save</button>
+      <p id="msg-tab1" class="msg"></p>
+    </div>
+
+    <!-- tab 2 content -->
+    <div id="tab2" class="tab-content hidden">
+      <textarea id="note-tab2" placeholder="Write your notes here..."></textarea>
+      <button onclick="saveNote('tab2')" class="save-btn">💾 Save</button>
+      <p id="msg-tab2" class="msg"></p>
+    </div>
+
+    <!-- tab 3 content -->
+    <div id="tab3" class="tab-content hidden">
+      <textarea id="note-tab3" placeholder="Write your notes here..."></textarea>
+      <button onclick="saveNote('tab3')" class="save-btn">💾 Save</button>
+      <p id="msg-tab3" class="msg"></p>
+    </div>
+
+  </div>
+
+  
+
+    <script src="./script.js"></script>
+</body>
+</html>
