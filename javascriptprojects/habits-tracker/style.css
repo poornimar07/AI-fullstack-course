@@ -1,0 +1,96 @@
+
+/* whole page */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  padding: 30px;
+  margin: 0;
+}
+
+/* white box */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* title */
+h1 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* input row */
+.add-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+/* input box */
+.add-box input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  outline: none;
+}
+
+/* input focus */
+.add-box input:focus {
+  border-color: #ff9500;
+}
+
+/* add button */
+.add-box button {
+  padding: 12px 18px;
+  font-size: 15px;
+  background: #ff9500;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* habit card */
+.habit-card {
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+  border: 2px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* habit name */
+.habit-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* delete button */
+.del-btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* empty message */
+.empty {
+  text-align: center;
+  color: #aaa;
+  font-size: 15px;
+  padding: 20px;
+}
